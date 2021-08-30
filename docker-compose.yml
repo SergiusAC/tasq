@@ -1,0 +1,15 @@
+version: "3.0"
+services:
+  postgres-db:
+    image: postgres:11
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=tasq
+      - POSTGRES_USER=tasq
+      - POSTGRES_SCHEMA=tasq
+      - POSTGRES_PASSWORD=tasq
+    volumes:
+      - tasq_db_data:/var/lib/postgresql/data:rw,z
+volumes:
+  tasq_db_data:

@@ -1,0 +1,38 @@
+@startuml
+
+entity task {
+  + id : bigint (PK)
+  --
+  # name : varchar(255) unique
+  # description : varchar(255)
+  # executor_id : bigint (FK)
+}
+
+entity tag {
+  + id : bigint (PK)
+  --
+  # name : varchar(255) unique
+}
+
+entity task_to_tag_mapping {
+  + id : bigint (PK)
+  --
+  # task_id : bigint (FK)
+  # tag_id : bigint (FK)
+  --
+  unique (task_id, tag_id)
+}
+
+entity executor {
+  + id : bigint (PK)
+  --
+  # name : varchar(255) unique
+  # position : varchar(255)
+  # on_vacation : boolean
+}
+
+task ||-right-|{ task_to_tag_mapping : "id : task_id"
+tag ||-left-|{ task_to_tag_mapping : "tag_id : id"
+executor ||--|{ task : " id : executor_id"
+
+@enduml
