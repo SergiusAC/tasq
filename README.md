@@ -1,3 +1,5 @@
+**Blog post**: [Developing a Reactive Microservice Using Quarkus Framework](https://medium.com/@sergiusac/developing-a-reactive-microservice-using-the-quarkus-framework-d4e16698a697)
+
 # TasQ Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
